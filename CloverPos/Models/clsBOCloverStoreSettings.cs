@@ -1,0 +1,109 @@
+﻿using CloverPos.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CloverPos.Models
+{
+    public class clsBOCloverStoreSettings
+    {
+        public string clientid { get; set; }
+        public string merchantid { get; set; }
+        public string code { get; set; }
+        public string tokenid { get; set; }
+        public string instock { get; set; }
+        public List<categories> categories { set; get; }
+    }
+    //public class categories
+    //{
+    //    public string id { get; set; }
+    //    public string name { get; set; }
+    //    public decimal taxrate { get; set; }
+    //    public Boolean selected { get; set; }
+    //}
+    public class merchant
+    {
+        public string href { get; set; }
+        public string id { get; set; }
+        public string name { get; set; }
+        public owner owner { get; set; }
+
+        public address address { set; get; }
+        public merchantPlan merchantPlan { set; get; }
+        public string phoneNumber { set; get; }
+        public string customerContactEmail { set; get; }
+
+        public string createdTime { set; get; }
+        public gateway gateway { set; get; }
+        public tenders tenders { set; get; }
+        public shifts shifts { set; get; }
+        public orders orders { set; get; }
+        public payments payments { set; get; }
+        public taxRates taxRates { set; get; }
+
+        public string isBillable { set; get; }
+
+    }
+    public class ExportProducts
+    {
+        public string storeid { set; get; }
+        public string upc { set; get; }
+        public long qty { set; get; }
+        public string sku { set; get; }
+        public string pack { set; get; }
+        public string uom { set; get; }
+        public string StoreProductName { set; get; }
+        public string Storedescription { set; get; }
+        public decimal price { set; get; }
+        public decimal sprice { set; get; }
+        public string start { set; get; }
+        public string end { set; get; }
+        public decimal tax { set; get; }
+        public string altupc1 { set; get; }
+        public string altupc2 { set; get; }
+        public string altupc3 { set; get; }
+        public string altupc4 { set; get; }
+        public string altupc5 { set; get; }
+        public decimal deposit { set; get; }
+        public string CategoryId { get; set; }
+    }
+    public class address
+    {
+        public string address_line_1 { get; set; }
+        public string city { get; set; }
+        public string locality { get; set; }
+        public string administrative_district_level_1 { get; set; }
+        public int postal_code { get; set; }
+        public string country { get; set; }
+    }
+    public class merchantPlan
+    {
+    }
+    public class owner
+    {
+        public string name { get; set; }
+        public string nickname { get; set; }
+        public string email { get; set; }
+    }
+    public class gateway
+    { }
+    public class shifts
+    { }
+    public class tenders
+    { }
+    public class orders
+    { }
+    public class payments
+    { }
+    //public class address
+    //{
+    //    public string address1 { get; set; }
+    //    public string address2 { get; set; }
+    //    public string address3 { get; set; }
+    //    public string country { get; set; }
+    //    public string zip { get; set; }
+    //    public string phoneNumber { get; set; }
+    //}
+}

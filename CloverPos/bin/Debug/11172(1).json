@@ -1,0 +1,1 @@
+{"elements": [ {"id": "V7C5FRRGY2QK6", "name": "Bexar County Tax Rate", "rate": 825000, "isDefault": true}, {"id": "JRR1XGNN3XEF6", "name": "NO_TAX_APPLIED", "rate": 0, "isDefault": false}], "href": "http://api.clover.com/v3/merchants/R4Z13M5Q2V041/tax_rates?limit=100"}

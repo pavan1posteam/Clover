@@ -1,0 +1,374 @@
+C:\Users\yacca\source\repos\CloverPos\CloverPos\bin\Debug\CloverPos.exe.config
+C:\Users\yacca\source\repos\CloverPos\CloverPos\bin\Debug\CloverPos.exe
+C:\Users\yacca\source\repos\CloverPos\CloverPos\bin\Debug\CloverPos.pdb
+C:\Users\yacca\source\repos\CloverPos\CloverPos\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\yacca\source\repos\CloverPos\CloverPos\bin\Debug\itextsharp.dll
+C:\Users\yacca\source\repos\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.dll
+C:\Users\yacca\source\repos\CloverPos\CloverPos\bin\Debug\RestSharp.dll
+C:\Users\yacca\source\repos\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\yacca\source\repos\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.dll
+C:\Users\yacca\source\repos\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.dll
+C:\Users\yacca\source\repos\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.dll
+C:\Users\yacca\source\repos\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\yacca\source\repos\CloverPos\CloverPos\bin\Debug\itextsharp.xml
+C:\Users\yacca\source\repos\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.xml
+C:\Users\yacca\source\repos\CloverPos\CloverPos\bin\Debug\RestSharp.xml
+C:\Users\yacca\source\repos\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\yacca\source\repos\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.xml
+C:\Users\yacca\source\repos\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.xml
+C:\Users\yacca\source\repos\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.xml
+C:\Users\yacca\source\repos\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\yacca\source\repos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.AssemblyReference.cache
+C:\Users\yacca\source\repos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CoreCompileInputs.cache
+C:\Users\yacca\source\repos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CopyComplete
+C:\Users\yacca\source\repos\CloverPos\CloverPos\obj\Debug\CloverPos.exe
+C:\Users\yacca\source\repos\CloverPos\CloverPos\obj\Debug\CloverPos.pdb
+C:\Workspace\newly separated projects\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.exe.config
+C:\Workspace\newly separated projects\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.exe
+C:\Workspace\newly separated projects\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.pdb
+C:\Workspace\newly separated projects\CloverPos\CloverPos\CloverPos\bin\Debug\BouncyCastle.Crypto.dll
+C:\Workspace\newly separated projects\CloverPos\CloverPos\CloverPos\bin\Debug\itextsharp.dll
+C:\Workspace\newly separated projects\CloverPos\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.dll
+C:\Workspace\newly separated projects\CloverPos\CloverPos\CloverPos\bin\Debug\RestSharp.dll
+C:\Workspace\newly separated projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Workspace\newly separated projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.dll
+C:\Workspace\newly separated projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.dll
+C:\Workspace\newly separated projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.dll
+C:\Workspace\newly separated projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.dll
+C:\Workspace\newly separated projects\CloverPos\CloverPos\CloverPos\bin\Debug\itextsharp.xml
+C:\Workspace\newly separated projects\CloverPos\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.xml
+C:\Workspace\newly separated projects\CloverPos\CloverPos\CloverPos\bin\Debug\RestSharp.xml
+C:\Workspace\newly separated projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Workspace\newly separated projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.xml
+C:\Workspace\newly separated projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.xml
+C:\Workspace\newly separated projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.xml
+C:\Workspace\newly separated projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.xml
+C:\Workspace\newly separated projects\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.AssemblyReference.cache
+C:\Workspace\newly separated projects\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CoreCompileInputs.cache
+C:\Workspace\newly separated projects\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.exe
+C:\Workspace\newly separated projects\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.pdb
+C:\Workspace\API PROJECTS\New Separated Projects\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.exe.config
+C:\Workspace\API PROJECTS\New Separated Projects\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.exe
+C:\Workspace\API PROJECTS\New Separated Projects\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.pdb
+C:\Workspace\API PROJECTS\New Separated Projects\CloverPos\CloverPos\CloverPos\bin\Debug\BouncyCastle.Crypto.dll
+C:\Workspace\API PROJECTS\New Separated Projects\CloverPos\CloverPos\CloverPos\bin\Debug\itextsharp.dll
+C:\Workspace\API PROJECTS\New Separated Projects\CloverPos\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.dll
+C:\Workspace\API PROJECTS\New Separated Projects\CloverPos\CloverPos\CloverPos\bin\Debug\RestSharp.dll
+C:\Workspace\API PROJECTS\New Separated Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Workspace\API PROJECTS\New Separated Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.dll
+C:\Workspace\API PROJECTS\New Separated Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.dll
+C:\Workspace\API PROJECTS\New Separated Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.dll
+C:\Workspace\API PROJECTS\New Separated Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.dll
+C:\Workspace\API PROJECTS\New Separated Projects\CloverPos\CloverPos\CloverPos\bin\Debug\itextsharp.xml
+C:\Workspace\API PROJECTS\New Separated Projects\CloverPos\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.xml
+C:\Workspace\API PROJECTS\New Separated Projects\CloverPos\CloverPos\CloverPos\bin\Debug\RestSharp.xml
+C:\Workspace\API PROJECTS\New Separated Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Workspace\API PROJECTS\New Separated Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.xml
+C:\Workspace\API PROJECTS\New Separated Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.xml
+C:\Workspace\API PROJECTS\New Separated Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.xml
+C:\Workspace\API PROJECTS\New Separated Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.xml
+C:\Workspace\API PROJECTS\New Separated Projects\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.AssemblyReference.cache
+C:\Workspace\API PROJECTS\New Separated Projects\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CoreCompileInputs.cache
+C:\Workspace\API PROJECTS\New Separated Projects\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.exe
+C:\Workspace\API PROJECTS\New Separated Projects\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.pdb
+C:\Workspace\API PROJECTS\New Separated Projects\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CopyComplete
+D:\MAU\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.exe.config
+D:\MAU\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.exe
+D:\MAU\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.pdb
+D:\MAU\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\BouncyCastle.Crypto.dll
+D:\MAU\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\itextsharp.dll
+D:\MAU\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.dll
+D:\MAU\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\RestSharp.dll
+D:\MAU\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\MAU\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.dll
+D:\MAU\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.dll
+D:\MAU\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.dll
+D:\MAU\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.dll
+D:\MAU\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\itextsharp.xml
+D:\MAU\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.xml
+D:\MAU\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\RestSharp.xml
+D:\MAU\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\MAU\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.xml
+D:\MAU\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.xml
+D:\MAU\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.xml
+D:\MAU\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.xml
+D:\MAU\CloverPos\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.AssemblyReference.cache
+D:\MAU\CloverPos\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CoreCompileInputs.cache
+D:\MAU\CloverPos\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CopyComplete
+D:\MAU\CloverPos\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.exe
+D:\MAU\CloverPos\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.pdb
+C:\Users\TECHMATIC\Downloads\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.exe.config
+C:\Users\TECHMATIC\Downloads\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.exe
+C:\Users\TECHMATIC\Downloads\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.pdb
+C:\Users\TECHMATIC\Downloads\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\TECHMATIC\Downloads\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\itextsharp.dll
+C:\Users\TECHMATIC\Downloads\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.dll
+C:\Users\TECHMATIC\Downloads\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\RestSharp.dll
+C:\Users\TECHMATIC\Downloads\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\TECHMATIC\Downloads\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.dll
+C:\Users\TECHMATIC\Downloads\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.dll
+C:\Users\TECHMATIC\Downloads\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.dll
+C:\Users\TECHMATIC\Downloads\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\TECHMATIC\Downloads\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\itextsharp.xml
+C:\Users\TECHMATIC\Downloads\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.xml
+C:\Users\TECHMATIC\Downloads\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\RestSharp.xml
+C:\Users\TECHMATIC\Downloads\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\TECHMATIC\Downloads\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.xml
+C:\Users\TECHMATIC\Downloads\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.xml
+C:\Users\TECHMATIC\Downloads\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.xml
+C:\Users\TECHMATIC\Downloads\CloverPos\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\TECHMATIC\Downloads\CloverPos\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.AssemblyReference.cache
+C:\Users\TECHMATIC\Downloads\CloverPos\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CoreCompileInputs.cache
+C:\Users\TECHMATIC\Downloads\CloverPos\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CopyComplete
+C:\Users\TECHMATIC\Downloads\CloverPos\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.exe
+C:\Users\TECHMATIC\Downloads\CloverPos\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.pdb
+D:\Latest API projects\Clover\CloverPos\CloverPos\bin\Debug\CloverPos.exe.config
+D:\Latest API projects\Clover\CloverPos\CloverPos\bin\Debug\CloverPos.exe
+D:\Latest API projects\Clover\CloverPos\CloverPos\bin\Debug\CloverPos.pdb
+D:\Latest API projects\Clover\CloverPos\CloverPos\bin\Debug\BouncyCastle.Crypto.dll
+D:\Latest API projects\Clover\CloverPos\CloverPos\bin\Debug\itextsharp.dll
+D:\Latest API projects\Clover\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.dll
+D:\Latest API projects\Clover\CloverPos\CloverPos\bin\Debug\RestSharp.dll
+D:\Latest API projects\Clover\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\Latest API projects\Clover\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.dll
+D:\Latest API projects\Clover\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.dll
+D:\Latest API projects\Clover\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.dll
+D:\Latest API projects\Clover\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.dll
+D:\Latest API projects\Clover\CloverPos\CloverPos\bin\Debug\itextsharp.xml
+D:\Latest API projects\Clover\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.xml
+D:\Latest API projects\Clover\CloverPos\CloverPos\bin\Debug\RestSharp.xml
+D:\Latest API projects\Clover\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\Latest API projects\Clover\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.xml
+D:\Latest API projects\Clover\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.xml
+D:\Latest API projects\Clover\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.xml
+D:\Latest API projects\Clover\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.xml
+D:\Latest API projects\Clover\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.AssemblyReference.cache
+D:\Latest API projects\Clover\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CoreCompileInputs.cache
+D:\Latest API projects\Clover\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CopyComplete
+D:\Latest API projects\Clover\CloverPos\CloverPos\obj\Debug\CloverPos.exe
+D:\Latest API projects\Clover\CloverPos\CloverPos\obj\Debug\CloverPos.pdb
+D:\API - Projects\Clover\Clover\CloverPos\CloverPos\bin\Debug\CloverPos.exe.config
+D:\API - Projects\Clover\Clover\CloverPos\CloverPos\bin\Debug\CloverPos.exe
+D:\API - Projects\Clover\Clover\CloverPos\CloverPos\bin\Debug\CloverPos.pdb
+D:\API - Projects\Clover\Clover\CloverPos\CloverPos\bin\Debug\BouncyCastle.Crypto.dll
+D:\API - Projects\Clover\Clover\CloverPos\CloverPos\bin\Debug\itextsharp.dll
+D:\API - Projects\Clover\Clover\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.dll
+D:\API - Projects\Clover\Clover\CloverPos\CloverPos\bin\Debug\RestSharp.dll
+D:\API - Projects\Clover\Clover\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\API - Projects\Clover\Clover\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.dll
+D:\API - Projects\Clover\Clover\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.dll
+D:\API - Projects\Clover\Clover\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.dll
+D:\API - Projects\Clover\Clover\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.dll
+D:\API - Projects\Clover\Clover\CloverPos\CloverPos\bin\Debug\itextsharp.xml
+D:\API - Projects\Clover\Clover\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.xml
+D:\API - Projects\Clover\Clover\CloverPos\CloverPos\bin\Debug\RestSharp.xml
+D:\API - Projects\Clover\Clover\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\API - Projects\Clover\Clover\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.xml
+D:\API - Projects\Clover\Clover\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.xml
+D:\API - Projects\Clover\Clover\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.xml
+D:\API - Projects\Clover\Clover\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.xml
+D:\API - Projects\Clover\Clover\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.AssemblyReference.cache
+D:\API - Projects\Clover\Clover\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CoreCompileInputs.cache
+D:\API - Projects\Clover\Clover\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CopyComplete
+D:\API - Projects\Clover\Clover\CloverPos\CloverPos\obj\Debug\CloverPos.exe
+D:\API - Projects\Clover\Clover\CloverPos\CloverPos\obj\Debug\CloverPos.pdb
+D:\API\Clover\Clover\CloverPos\CloverPos\bin\Debug\CloverPos.exe.config
+D:\API\Clover\Clover\CloverPos\CloverPos\bin\Debug\CloverPos.exe
+D:\API\Clover\Clover\CloverPos\CloverPos\bin\Debug\CloverPos.pdb
+D:\API\Clover\Clover\CloverPos\CloverPos\bin\Debug\BouncyCastle.Crypto.dll
+D:\API\Clover\Clover\CloverPos\CloverPos\bin\Debug\itextsharp.dll
+D:\API\Clover\Clover\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.dll
+D:\API\Clover\Clover\CloverPos\CloverPos\bin\Debug\RestSharp.dll
+D:\API\Clover\Clover\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\API\Clover\Clover\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.dll
+D:\API\Clover\Clover\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.dll
+D:\API\Clover\Clover\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.dll
+D:\API\Clover\Clover\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.dll
+D:\API\Clover\Clover\CloverPos\CloverPos\bin\Debug\itextsharp.xml
+D:\API\Clover\Clover\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.xml
+D:\API\Clover\Clover\CloverPos\CloverPos\bin\Debug\RestSharp.xml
+D:\API\Clover\Clover\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\API\Clover\Clover\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.xml
+D:\API\Clover\Clover\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.xml
+D:\API\Clover\Clover\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.xml
+D:\API\Clover\Clover\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.xml
+D:\API\Clover\Clover\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.AssemblyReference.cache
+D:\API\Clover\Clover\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CoreCompileInputs.cache
+D:\API\Clover\Clover\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CopyComplete
+D:\API\Clover\Clover\CloverPos\CloverPos\obj\Debug\CloverPos.exe
+D:\API\Clover\Clover\CloverPos\CloverPos\obj\Debug\CloverPos.pdb
+D:\Latest Projects\CloverPos\CloverPos\bin\Debug\CloverPos.exe.config
+D:\Latest Projects\CloverPos\CloverPos\bin\Debug\CloverPos.exe
+D:\Latest Projects\CloverPos\CloverPos\bin\Debug\CloverPos.pdb
+D:\Latest Projects\CloverPos\CloverPos\bin\Debug\BouncyCastle.Crypto.dll
+D:\Latest Projects\CloverPos\CloverPos\bin\Debug\itextsharp.dll
+D:\Latest Projects\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.dll
+D:\Latest Projects\CloverPos\CloverPos\bin\Debug\RestSharp.dll
+D:\Latest Projects\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\Latest Projects\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.dll
+D:\Latest Projects\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.dll
+D:\Latest Projects\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.dll
+D:\Latest Projects\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.dll
+D:\Latest Projects\CloverPos\CloverPos\bin\Debug\itextsharp.xml
+D:\Latest Projects\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.xml
+D:\Latest Projects\CloverPos\CloverPos\bin\Debug\RestSharp.xml
+D:\Latest Projects\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\Latest Projects\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.xml
+D:\Latest Projects\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.xml
+D:\Latest Projects\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.xml
+D:\Latest Projects\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.xml
+D:\Latest Projects\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.AssemblyReference.cache
+D:\Latest Projects\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CoreCompileInputs.cache
+D:\Latest Projects\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CopyComplete
+D:\Latest Projects\CloverPos\CloverPos\obj\Debug\CloverPos.exe
+D:\Latest Projects\CloverPos\CloverPos\obj\Debug\CloverPos.pdb
+D:\API\CloverNew\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.exe.config
+D:\API\CloverNew\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.exe
+D:\API\CloverNew\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.pdb
+D:\API\CloverNew\CloverPos\CloverPos\CloverPos\bin\Debug\BouncyCastle.Crypto.dll
+D:\API\CloverNew\CloverPos\CloverPos\CloverPos\bin\Debug\itextsharp.dll
+D:\API\CloverNew\CloverPos\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.dll
+D:\API\CloverNew\CloverPos\CloverPos\CloverPos\bin\Debug\RestSharp.dll
+D:\API\CloverNew\CloverPos\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\API\CloverNew\CloverPos\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.dll
+D:\API\CloverNew\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.dll
+D:\API\CloverNew\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.dll
+D:\API\CloverNew\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.dll
+D:\API\CloverNew\CloverPos\CloverPos\CloverPos\bin\Debug\itextsharp.xml
+D:\API\CloverNew\CloverPos\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.xml
+D:\API\CloverNew\CloverPos\CloverPos\CloverPos\bin\Debug\RestSharp.xml
+D:\API\CloverNew\CloverPos\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\API\CloverNew\CloverPos\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.xml
+D:\API\CloverNew\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.xml
+D:\API\CloverNew\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.xml
+D:\API\CloverNew\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.xml
+D:\API\CloverNew\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CoreCompileInputs.cache
+D:\API\CloverNew\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CopyComplete
+D:\API\CloverNew\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.exe
+D:\API\CloverNew\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.pdb
+D:\API\CloverNew\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.AssemblyReference.cache
+D:\API - Projects\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.exe.config
+D:\API - Projects\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.exe
+D:\API - Projects\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.pdb
+D:\API - Projects\CloverPos\CloverPos\CloverPos\bin\Debug\BouncyCastle.Crypto.dll
+D:\API - Projects\CloverPos\CloverPos\CloverPos\bin\Debug\itextsharp.dll
+D:\API - Projects\CloverPos\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.dll
+D:\API - Projects\CloverPos\CloverPos\CloverPos\bin\Debug\RestSharp.dll
+D:\API - Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\API - Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.dll
+D:\API - Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.dll
+D:\API - Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.dll
+D:\API - Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.dll
+D:\API - Projects\CloverPos\CloverPos\CloverPos\bin\Debug\itextsharp.xml
+D:\API - Projects\CloverPos\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.xml
+D:\API - Projects\CloverPos\CloverPos\CloverPos\bin\Debug\RestSharp.xml
+D:\API - Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\API - Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.xml
+D:\API - Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.xml
+D:\API - Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.xml
+D:\API - Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.xml
+D:\API - Projects\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CoreCompileInputs.cache
+D:\API - Projects\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CopyComplete
+D:\API - Projects\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.exe
+D:\API - Projects\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.pdb
+D:\API - Projects\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.AssemblyReference.cache
+E:\C# API codes\CloverPos Latest\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.exe.config
+E:\C# API codes\CloverPos Latest\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.exe
+E:\C# API codes\CloverPos Latest\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.pdb
+E:\C# API codes\CloverPos Latest\CloverPos\CloverPos\CloverPos\bin\Debug\BouncyCastle.Crypto.dll
+E:\C# API codes\CloverPos Latest\CloverPos\CloverPos\CloverPos\bin\Debug\itextsharp.dll
+E:\C# API codes\CloverPos Latest\CloverPos\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.dll
+E:\C# API codes\CloverPos Latest\CloverPos\CloverPos\CloverPos\bin\Debug\RestSharp.dll
+E:\C# API codes\CloverPos Latest\CloverPos\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.dll
+E:\C# API codes\CloverPos Latest\CloverPos\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.dll
+E:\C# API codes\CloverPos Latest\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.dll
+E:\C# API codes\CloverPos Latest\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.dll
+E:\C# API codes\CloverPos Latest\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.dll
+E:\C# API codes\CloverPos Latest\CloverPos\CloverPos\CloverPos\bin\Debug\itextsharp.xml
+E:\C# API codes\CloverPos Latest\CloverPos\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.xml
+E:\C# API codes\CloverPos Latest\CloverPos\CloverPos\CloverPos\bin\Debug\RestSharp.xml
+E:\C# API codes\CloverPos Latest\CloverPos\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.xml
+E:\C# API codes\CloverPos Latest\CloverPos\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.xml
+E:\C# API codes\CloverPos Latest\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.xml
+E:\C# API codes\CloverPos Latest\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.xml
+E:\C# API codes\CloverPos Latest\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.xml
+E:\C# API codes\CloverPos Latest\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.AssemblyReference.cache
+E:\C# API codes\CloverPos Latest\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CoreCompileInputs.cache
+E:\C# API codes\CloverPos Latest\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CopyComplete
+E:\C# API codes\CloverPos Latest\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.exe
+E:\C# API codes\CloverPos Latest\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.pdb
+D:\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.exe.config
+D:\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.exe
+D:\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.pdb
+D:\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\BouncyCastle.Crypto.dll
+D:\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\itextsharp.dll
+D:\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.dll
+D:\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\RestSharp.dll
+D:\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.dll
+D:\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.dll
+D:\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.dll
+D:\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.dll
+D:\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\itextsharp.xml
+D:\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.xml
+D:\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\RestSharp.xml
+D:\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.xml
+D:\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.xml
+D:\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.xml
+D:\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.xml
+D:\Latest Projects\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.AssemblyReference.cache
+D:\Latest Projects\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CoreCompileInputs.cache
+D:\Latest Projects\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CopyComplete
+D:\Latest Projects\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.exe
+D:\Latest Projects\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.pdb
+D:\Latest Projects\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.exe.config
+D:\Latest Projects\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.exe
+D:\Latest Projects\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\CloverPos.pdb
+D:\Latest Projects\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\BouncyCastle.Crypto.dll
+D:\Latest Projects\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\itextsharp.dll
+D:\Latest Projects\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.dll
+D:\Latest Projects\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\RestSharp.dll
+D:\Latest Projects\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\Latest Projects\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.dll
+D:\Latest Projects\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.dll
+D:\Latest Projects\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.dll
+D:\Latest Projects\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.dll
+D:\Latest Projects\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\itextsharp.xml
+D:\Latest Projects\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.xml
+D:\Latest Projects\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\RestSharp.xml
+D:\Latest Projects\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\Latest Projects\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.xml
+D:\Latest Projects\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.xml
+D:\Latest Projects\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.xml
+D:\Latest Projects\Latest Projects\CloverPos\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.xml
+D:\Latest Projects\Latest Projects\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.AssemblyReference.cache
+D:\Latest Projects\Latest Projects\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CoreCompileInputs.cache
+D:\Latest Projects\Latest Projects\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CopyComplete
+D:\Latest Projects\Latest Projects\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.exe
+D:\Latest Projects\Latest Projects\CloverPos\CloverPos\CloverPos\obj\Debug\CloverPos.pdb
+C:\Bottlecapps\API\CloverPos\CloverPos\bin\Debug\CloverPos.exe.config
+C:\Bottlecapps\API\CloverPos\CloverPos\bin\Debug\CloverPos.exe
+C:\Bottlecapps\API\CloverPos\CloverPos\bin\Debug\CloverPos.pdb
+C:\Bottlecapps\API\CloverPos\CloverPos\bin\Debug\BouncyCastle.Crypto.dll
+C:\Bottlecapps\API\CloverPos\CloverPos\bin\Debug\itextsharp.dll
+C:\Bottlecapps\API\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.dll
+C:\Bottlecapps\API\CloverPos\CloverPos\bin\Debug\RestSharp.dll
+C:\Bottlecapps\API\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Bottlecapps\API\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.dll
+C:\Bottlecapps\API\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.dll
+C:\Bottlecapps\API\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.dll
+C:\Bottlecapps\API\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.dll
+C:\Bottlecapps\API\CloverPos\CloverPos\bin\Debug\itextsharp.xml
+C:\Bottlecapps\API\CloverPos\CloverPos\bin\Debug\Newtonsoft.Json.xml
+C:\Bottlecapps\API\CloverPos\CloverPos\bin\Debug\RestSharp.xml
+C:\Bottlecapps\API\CloverPos\CloverPos\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Bottlecapps\API\CloverPos\CloverPos\bin\Debug\System.Data.SqlClient.xml
+C:\Bottlecapps\API\CloverPos\CloverPos\bin\Debug\System.Security.AccessControl.xml
+C:\Bottlecapps\API\CloverPos\CloverPos\bin\Debug\System.Security.Permissions.xml
+C:\Bottlecapps\API\CloverPos\CloverPos\bin\Debug\System.Security.Principal.Windows.xml
+C:\Bottlecapps\API\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CoreCompileInputs.cache
+C:\Bottlecapps\API\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.CopyComplete
+C:\Bottlecapps\API\CloverPos\CloverPos\obj\Debug\CloverPos.exe
+C:\Bottlecapps\API\CloverPos\CloverPos\obj\Debug\CloverPos.pdb
+C:\Bottlecapps\API\CloverPos\CloverPos\obj\Debug\CloverPos.csproj.AssemblyReference.cache
