@@ -378,6 +378,40 @@ namespace CloverPos
         {
             return JsonConvert.DeserializeObject<T>(jsonstr);
         }
+        //new include for getPack and getVolume
+        public int getpack(string prodName)
+        {
+            if (string.IsNullOrEmpty(prodName))
+                return 1;
+
+            prodName = prodName.ToUpper();
+            var regexMatch = Regex.Match(prodName, @"(?<Result>\d+)\s*PK");
+            var prodPack = regexMatch.Groups["Result"].Value;
+
+            if (!string.IsNullOrEmpty(prodPack))
+            {
+                int.TryParse(prodPack, out int outVal);
+                return outVal;
+            }
+
+            return 1;
+        }
+
+        public string getVolume(string prodName)
+        {
+            if (string.IsNullOrEmpty(prodName))
+                return "";
+
+            prodName = prodName.ToUpper();
+
+            var regexMatch = Regex.Match(
+                prodName,
+                @"(?<Result>\d+\s*ML|\d+\s*LTR|\d+\s*L|\d+\s*OZ)",
+                RegexOptions.IgnoreCase
+            );
+
+            return regexMatch.Success ? regexMatch.Value : "";
+        }
 
         //public void SaveRequestResponse(string jsonStringReq, string CLOVERJsonResp, string ErrorMessage, string storeid)
         //{
@@ -443,6 +477,10 @@ namespace CloverPos
                     num /= 100m;
                 }
                 List<ExportProducts> list = new List<ExportProducts>();
+
+                //new include for fullname file
+                List<FullNameProductModel> fullNameList = new List<FullNameProductModel>();
+
                 parentItems parentItems = new parentItems();
                 int num3 = 0;
                 decimal num4 = default(decimal);
@@ -470,7 +508,7 @@ namespace CloverPos
                         ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                         IRestResponse val6 = val4.Execute((IRestRequest)(object)val5);
                         string content2 = val6.Content;
-                        //File.AppendAllText("10917(2).json", content2);
+                        //File.AppendAllText("12615.json", content2);
                         if (val6.StatusCode.ToString().ToUpper() != "OK")
                         {
                             if (!exception.Contains(storeid.ToString()))
@@ -520,6 +558,9 @@ namespace CloverPos
                                 continue;
                             }
                             ExportProducts exportProducts = new ExportProducts();
+                            //new include
+                            FullNameProductModel fn = fn = new FullNameProductModel();
+
                             exportProducts.storeid = storeid;
                             exportProducts.StoreProductName = "";
                             if (element.name != null)
@@ -783,13 +824,49 @@ namespace CloverPos
                                 }
                             }
                             exportProducts.CategoryId = ((element.categories.elements.Count > 0) ? string.Join(",", element.categories.elements.Select((Categoryelements x) => x.id)) : "Other");
+                            //new include for fullname file
+                            fn.pname = exportProducts.StoreProductName;
+                            fn.pdesc = exportProducts.StoreProductName;
+                            fn.sku = exportProducts.sku;
+                            fn.upc = exportProducts.upc;
+                            fn.Price = exportProducts.price;
+                            fn.uom = exportProducts.uom;
+                            fn.pack = int.TryParse(exportProducts.pack, out int p) ? p : 1;
+                            if (element.categories != null)
+                            {
+                                if (element.categories.elements != null &&
+                                element.categories.elements.Count > 0)
+                                {
+                                    fn.pcat = element.categories.elements.Count > 0 ? element.categories.elements[0].name : "";
+                                }
+
+                            }
+                            fn.uom = string.IsNullOrEmpty(fn.uom) ? getVolume(fn.pname) : fn.uom;
+                            exportProducts.uom = fn.uom;
+                            fn.pcat1 = "";
+                            fn.pcat2 = "";
+                            fn.CategoryId = exportProducts.CategoryId;
+                            if (fn.pack == 1)
+                            {
+                                int derivedPack = getpack(exportProducts.StoreProductName);
+                                fn.pack = derivedPack;                         // override fullname pack
+                                exportProducts.pack = derivedPack.ToString();  // override export pack
+                                
+                            }
+
+                            fn.country = "";
+                            fn.region = "";
+                            
+
                             if (upcnotnullstores.Contains(storeid.ToString()) && exportProducts.upc != "")
                             {
                                 list.Add(exportProducts);
+                                fullNameList.Add(fn);
                             }
                             else if (exportProducts.CategoryId != "AKGXX4R4H9YP2" && element.code != null && element.code != "" && exportProducts.sku != "YWBMNBHY8J63E" && exportProducts.sku != "BSX0WDE4S26GR")
                             {
                                 list.Add(exportProducts);
+                                fullNameList.Add(fn);
                             }
                         }
                     }
@@ -851,6 +928,8 @@ namespace CloverPos
                     return text4;
                 }
                 List<ExportProducts> list3 = new List<ExportProducts>();
+                List<FullNameProductModel> fnlist = new List<FullNameProductModel>();
+
                 if (ExcludeToGo.Contains(storeid))
                 {
                     list3.AddRange(list);
@@ -861,12 +940,17 @@ namespace CloverPos
                     {
                         List<ExportProducts> collection = list.Where((ExportProducts x) => x.CategoryId.Contains(categoryItemid.id)).ToList();
                         list3.AddRange(collection);
+                        List<FullNameProductModel> collectionfn = fullNameList.Where((FullNameProductModel x) => x.CategoryId.Contains(categoryItemid.id)).ToList();
+                        fnlist.AddRange(collectionfn);
                     }
                 }
                 
                 
                 string text5 = ConfigurationManager.AppSettings["BaseDirectory"] + "\\" + storeid + "\\Upload\\PRODUCT" + storeid + DateTime.UtcNow.ToString("yyyymmddHHmmss") + ".csv";
                 CreateCSVFromGenericList(list3, text5, storeid);
+                string text6 = ConfigurationManager.AppSettings["BaseDirectory"] + "\\" + storeid + "\\Upload\\FULLNAME" + storeid + DateTime.UtcNow.ToString("yyyymmddHHmmss") + ".csv";
+                CreateCSVFromGenericList(fnlist, text6, storeid);
+                
                 return text5;
             }
             catch (Exception ex3)

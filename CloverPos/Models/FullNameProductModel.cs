@@ -20,6 +20,7 @@ namespace CloverPos.Models
         public string pcat2 { get; set; }
         public string country { get; set; }
         public string region { get; set; }
+        public string CategoryId { get; set; }
     }
 }
 
