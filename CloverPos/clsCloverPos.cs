@@ -35,6 +35,7 @@ namespace CloverPos
         string Staticqty100 = ConfigurationManager.AppSettings.Get("Staticqty100");
         string EnabledOnline = ConfigurationManager.AppSettings.Get("EnabledOnline");
         string NegativeToPositive = ConfigurationManager.AppSettings.Get("NegativeToPositive");
+        string upcskucodeidnull= ConfigurationManager.AppSettings.Get("upcskucodeid");
 
 
         StoreSetting ss = new StoreSetting();
@@ -465,7 +466,7 @@ namespace CloverPos
                 val2.AddHeader("Authorization", "Bearer " + tokenid);
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 IRestResponse val3 = val.Execute((IRestRequest)(object)val2);
-                //File.AppendAllText("10917(1).json", val3.Content);
+                //File.AppendAllText("12820.json", val3.Content);
                 string content = val3.Content;
                 Tax tax = Load<Tax>(content);
                 int num2 = (from t in tax.elements
@@ -508,7 +509,7 @@ namespace CloverPos
                         ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                         IRestResponse val6 = val4.Execute((IRestRequest)(object)val5);
                         string content2 = val6.Content;
-                        //File.AppendAllText("12615.json", content2);
+                       // File.AppendAllText("12821.json", content2);
                         if (val6.StatusCode.ToString().ToUpper() != "OK")
                         {
                             if (!exception.Contains(storeid.ToString()))
@@ -644,6 +645,39 @@ namespace CloverPos
                             {
                                 exportProducts.upc = "#" + element.code.ToString();
                             }
+                            if (upcskucodeidnull.Contains(storeid.ToString()))
+                            {
+                                exportProducts.upc = "";
+                                exportProducts.sku = "";
+                                element.code = ((element.code == null) ? "" : element.code);
+                                element.sku = ((element.sku == null) ? "" : element.sku);
+                                exportProducts.upc = "#" + element.code.ToString();
+                                exportProducts.sku = "#" + element.sku;
+                                if (exportProducts.upc.Length <= 1)
+                                {
+                                    if (exportProducts.sku.Length <= 1)
+                                    {
+                                        exportProducts.upc = "#" + element.id;
+                                        exportProducts.sku = "#" + element.id;
+                                    }
+                                    else
+                                    {
+                                        exportProducts.upc = exportProducts.sku;
+                                    }
+                                }
+                                if (exportProducts.sku.Length <=1)
+                                {
+                                    if (exportProducts.upc.Length <= 1)
+                                    {
+                                        exportProducts.upc = "#" + element.id;
+                                        exportProducts.sku = "#" + element.id;
+                                    }
+                                    else
+                                    {
+                                        exportProducts.sku = exportProducts.upc;
+                                    }
+                                }
+                            }
                             if (upcasskuandcode.Contains(storeid.ToString()))
                             {
                                 element.code = ((element.code == null) ? "" : element.code);
@@ -692,7 +726,7 @@ namespace CloverPos
                                 }
                                 else
                                 {
-                                    exportProducts.upc = "#9911258" + id;
+                                    exportProducts.upc = "#99" +storeid+ id;
                                 }
                             }
                             if (exportProducts.storeid == "12120" && element.code != null)
@@ -858,7 +892,7 @@ namespace CloverPos
                             fn.region = "";
                             
 
-                            if (upcnotnullstores.Contains(storeid.ToString()) && exportProducts.upc != "")
+                            if ((upcnotnullstores.Contains(storeid.ToString()) || upcskucodeidnull.Contains(storeid.ToString())) && exportProducts.upc != "")
                             {
                                 list.Add(exportProducts);
                                 fullNameList.Add(fn);

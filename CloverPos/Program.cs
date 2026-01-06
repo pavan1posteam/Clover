@@ -18,7 +18,7 @@ namespace CloverPos
                 {
                     try
                     {
-                        //if (current.StoreSettings.StoreId == 12809)
+                        //if (current.StoreSettings.StoreId == 12821)
                         //{
 
                         //}
