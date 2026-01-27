@@ -73,97 +73,32 @@ namespace CloverPos
 
         public string[] Clover_RefreshToken(string clientid, string refresh_token, int StoreId, int expiresintime, int AccessTokenLastUpdate)
         {
-            #region OLD Approach
-            //string accesstoken = "";
-            ////string refreshtoken = "";
-            //string[] token_info = new string[2];
-            //try
-            //{
-            //    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-            //    string baseUrl1 = baseUrl + "/oauth/v2/refresh";
-            //    var client = new RestClient(baseUrl1);
-            //    var request = new RestRequest(Method.POST);
-            //    request.AddHeader("cache-control", "no-cache");
-            //    request.AddHeader("content-type", "application/json");
-
-            //    Authdetails_Refresh auth = new Authdetails_Refresh();
-            //    auth.client_id = clientid;
-            //    auth.refresh_token = refresh_token;
-
-            //    string auth_json = JsonConvert.SerializeObject(auth);
-
-            //    request.AddParameter("application/json", auth_json, ParameterType.RequestBody);
-            //    IRestResponse response = client.Execute(request);
-            //    string clover_response = response.Content;
-            //    dynamic responseData = JsonConvert.DeserializeObject(response.Content);
-            //    accesstoken = responseData["access_token"].Value;
-
-            //    if (response.StatusCode.ToString() == "OK")
-            //    {
-            //        accesstoken = responseData.access_token;
-            //        refresh_token = responseData.refresh_token;
-            //        token_info[0] = accesstoken;
-            //        token_info[1] = refresh_token;
-
-            //        DataTable dsupstoken = new DataTable();
-            //        DatabaseObject dbObjItem1 = new DatabaseObject();
-            //        List<SqlParameter> sItemParams = new List<SqlParameter>();
-            //        try
-            //        {
-            //            sItemParams.Add(new SqlParameter("@StoreId", StoreId));
-            //            sItemParams.Add(new SqlParameter("@ClientId", clientid));
-            //            sItemParams.Add(new SqlParameter("@AccessToken", accesstoken));
-            //            sItemParams.Add(new SqlParameter("@refresh_token", refresh_token));
-            //            sItemParams.Add(new SqlParameter("@Request", auth_json));
-            //            sItemParams.Add(new SqlParameter("@Response", clover_response));
-            //            sItemParams.Add(new SqlParameter("@Status", "Refresh_Token"));
-            //            dsupstoken = dbObjItem1.GetDataTable("usp_bc_CloverAccessTokenInsert", sItemParams);
-            //        }
-            //        catch (Exception ex)
-            //        { Console.WriteLine(ex.Message); }
-
-            //        SaveCloverAccessTokenReqResInfo(StoreId, auth_json, clover_response, "Refresh_Token");
-            //    }
-            //    else
-            //    {
-            //        SaveCloverAccessTokenReqResInfo(StoreId, auth_json, clover_response, "Refresh_Token");
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine(ex.Message);
-            //    new clsEmail().sendEmail(DeveloperId, "", "", "Error in CloverPos@" + DateTime.UtcNow + " GMT", ex.Message + "<br/>" + ex.StackTrace);
-            //}
-            //return token_info;
-
-            #endregion
-
-            string text = "";
-            //string text2 = "";
-            string[] array = new string[2];
+            string accesstoken = "";
+            //string refreshtoken = "";
+            string[] token_info = new string[2];
             try
             {
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-                string text3 = baseUrl + "/oauth/v2/refresh";
-                RestClient val = new RestClient(text3);
-                RestRequest val2 = new RestRequest((Method)1);
-                val2.AddHeader("cache-control", "no-cache");
-                val2.AddHeader("content-type", "application/json");
+                string Url = baseUrl + "/oauth/v2/refresh";
+                RestClient client = new RestClient(Url);
+                RestRequest request = new RestRequest(Method.POST);
+                request.AddHeader("cache-control", "no-cache");
+                request.AddHeader("content-type", "application/json");
                 Authdetails_Refresh authdetails_Refresh = new Authdetails_Refresh();
                 authdetails_Refresh.client_id = clientid;
                 authdetails_Refresh.refresh_token = refresh_token;
-                string text4 = JsonConvert.SerializeObject((object)authdetails_Refresh);
-                val2.AddParameter("application/json", (object)text4, (ParameterType)4);
-                IRestResponse val3 = val.Execute((IRestRequest)(object)val2);
-                string content = val3.Content;
-                dynamic val4 = JsonConvert.DeserializeObject(val3.Content);
-                text = val4["access_token"].Value;
-                if (val3.StatusCode.ToString() == "OK")
+                string auth_json = JsonConvert.SerializeObject(authdetails_Refresh);
+                request.AddParameter("application/json", auth_json, (ParameterType)4);
+                IRestResponse response = client.Execute(request);
+                string content = response.Content;
+                dynamic responseData = JsonConvert.DeserializeObject(response.Content);
+                accesstoken = responseData["access_token"].Value;
+                if (response.StatusCode.ToString() == "OK")
                 {
-                    text = val4.access_token;
-                    refresh_token = val4.refresh_token;
-                    array[0] = text;
-                    array[1] = refresh_token;
+                    accesstoken = responseData.access_token;
+                    refresh_token = responseData.refresh_token;
+                    token_info[0] = accesstoken;
+                    token_info[1] = refresh_token;
                     DataTable dataTable = new DataTable();
                     DatabaseObject databaseObject = new DatabaseObject();
                     List<SqlParameter> list = new List<SqlParameter>();
@@ -171,9 +106,9 @@ namespace CloverPos
                     {
                         list.Add(new SqlParameter("@StoreId", StoreId));
                         list.Add(new SqlParameter("@ClientId", clientid));
-                        list.Add(new SqlParameter("@AccessToken", text));
+                        list.Add(new SqlParameter("@AccessToken", accesstoken));
                         list.Add(new SqlParameter("@refresh_token", refresh_token));
-                        list.Add(new SqlParameter("@Request", text4));
+                        list.Add(new SqlParameter("@Request", auth_json));
                         list.Add(new SqlParameter("@Response", content));
                         list.Add(new SqlParameter("@Status", "Refresh_Token"));
                         dataTable = databaseObject.GetDataTable("usp_bc_CloverAccessTokenInsert", list);
@@ -181,11 +116,11 @@ namespace CloverPos
                     catch (Exception)
                     {
                     }
-                    SaveCloverAccessTokenReqResInfo(StoreId, text4, content, "Refresh_Token");
+                    SaveCloverAccessTokenReqResInfo(StoreId, auth_json, content, "Refresh_Token");
                 }
                 else
                 {
-                    SaveCloverAccessTokenReqResInfo(StoreId, text4, content, "Refresh_Token");
+                    SaveCloverAccessTokenReqResInfo(StoreId, auth_json, content, "Refresh_Token");
                 }
             }
             catch (Exception ex2)
@@ -193,136 +128,72 @@ namespace CloverPos
                 Console.WriteLine(ex2.Message);
                 new clsEmail().sendEmail(DeveloperId, "", "", "Error in CloverPos@" + DateTime.UtcNow.ToString() + " GMT", ex2.Message + "<br/>" + ex2.StackTrace);
             }
-            return array;
+            return token_info;
 
         }
         public string CloverSettings(int StoreId, string MerchantId, string ClientId, string TokenId, string Code, string InStock, List<categories> Category)
         {
-            #region OLD Approach
-            //clsBOCloverStoreSettings cloverposserttings = new clsBOCloverStoreSettings();
-            //categories cats = new categories();
-            ////cloverposserttings = JsonConvert.DeserializeObject<clsBOCloverStoreSettings>();
-            ////List<categories> ExistCategories = cloverposserttings.categories;
-            //List<categories> ExistCategories = Category;
-            //cloverposserttings.categories = new List<categories>();
-
-            //string catjson = getCategories(MerchantId, TokenId, StoreId);
-            //if (!string.IsNullOrEmpty(catjson))
-            //{
-            //    List<categories> cat = (List<categories>)JsonConvert.DeserializeObject(catjson, typeof(List<categories>));
-            //    cat.Add(new categories { id = "Other", name = "Other", selected = false, taxrate = 0 });
-            //    foreach (var item in ExistCategories)
-            //    {
-            //        cats = new categories();
-            //        if (ExistCategories != null)
-            //        {
-            //            var findcat = ExistCategories.Where(m => m.id == item.id).FirstOrDefault();
-            //            if (findcat != null)
-            //            {
-            //                cats.taxrate = findcat.taxrate;
-            //                cats.selected = findcat.selected;
-            //            }
-            //        }
-            //        cats.id = item.id;
-            //        cats.name = item.name;
-            //        if (item.id != "AKGXX4R4H9YP2")
-            //        {
-            //            cloverposserttings.categories.Add(cats);
-            //        }
-            //    }
-
-
-            //    //clsBOCloverStoreSettings cloverposserttings = new clsBOCloverStoreSettings();
-            //    cloverposserttings.merchantid = MerchantId;
-            //    cloverposserttings.clientid = ClientId;
-            //    cloverposserttings.code = Code;
-            //    cloverposserttings.tokenid = TokenId;
-            //    cloverposserttings.instock = InStock;
-
-            //    //cloverposserttings.categories = new List<categories>();
-
-            //    foreach (var item in cloverposserttings.categories)
-            //    {
-            //        if (item.selected)
-            //        {
-            //            cats = new categories();
-            //            cats.id = item.id;
-            //            //cat.name = item.name;
-            //            //cat.selected = item.selected;
-            //            cats.taxrate = item.taxrate;
-            //            cloverposserttings.categories.Add(cats);
-            //        }
-            //    }
-            //    JsonSerializer serializer = new JsonSerializer();
-            //    string cloversettings = JsonConvert.SerializeObject(cloverposserttings);
-            //    //StoreAddress st = new StoreAddress();
-            //    //st.UpdatePosSettings(StoreId, "CLOVER", cloversettings);
-            //    string filename = GenerateCSVFiles(StoreId.ToString(), cloverposserttings);
-
-
-            //    return filename;
-            //}
-            //else
-            //{ return ""; }
-            #endregion
-            clsBOCloverStoreSettings clsBOCloverStoreSettings = new clsBOCloverStoreSettings();
+            clsBOCloverStoreSettings cloverposserttings = new clsBOCloverStoreSettings();
             categories categories = new categories();
-            clsBOCloverStoreSettings.categories = new List<categories>();
-            string categories2 = getCategories(MerchantId, TokenId, StoreId);
-            if (!string.IsNullOrEmpty(categories2))
+            List<categories> ExistCategories = Category;
+            cloverposserttings.categories = new List<categories>();
+            string catjson = getCategories(MerchantId, TokenId, StoreId);
+            if (!string.IsNullOrEmpty(catjson))
             {
-                List<categories> list = (List<categories>)JsonConvert.DeserializeObject(categories2, typeof(List<categories>));
-                list.Add(new categories
+                List<categories> cat = (List<categories>)JsonConvert.DeserializeObject(catjson, typeof(List<categories>));
+                cat.Add(new categories
                 {
                     id = "Other",
                     name = "Other",
                     selected = false,
                     taxrate = 0m
                 });
-                foreach (categories item in Category)
+                foreach (categories item in ExistCategories)
                 {
                     categories = new categories();
-                    if (Category != null)
+                    if (ExistCategories != null)
                     {
-                        categories categories3 = Category.Where((categories m) => m.id == item.id).FirstOrDefault();
-                        if (categories3 != null)
+                        categories findcat = ExistCategories.Where((categories m) => m.id == item.id).FirstOrDefault();
+                        if (findcat != null)
                         {
-                            categories.taxrate = categories3.taxrate;
-                            categories.selected = categories3.selected;
+                            categories.taxrate = findcat.taxrate;
+                            categories.selected = findcat.selected;
                         }
                     }
                     categories.id = item.id;
                     categories.name = item.name;
                     if (item.id != "AKGXX4R4H9YP2")
                     {
-                        clsBOCloverStoreSettings.categories.Add(categories);
+                        cloverposserttings.categories.Add(categories);
                     }
                 }
-                clsBOCloverStoreSettings.merchantid = MerchantId;
-                clsBOCloverStoreSettings.clientid = ClientId;
-                clsBOCloverStoreSettings.code = Code;
-                clsBOCloverStoreSettings.tokenid = TokenId;
-                clsBOCloverStoreSettings.instock = InStock;
-                foreach (categories category in clsBOCloverStoreSettings.categories)
+                cloverposserttings.merchantid = MerchantId;
+                cloverposserttings.clientid = ClientId;
+                cloverposserttings.code = Code;
+                cloverposserttings.tokenid = TokenId;
+                cloverposserttings.instock = InStock;
+                foreach (categories item in cloverposserttings.categories)
                 {
-                    if (category.selected)
+                    if (item.selected)
                     {
                         categories = new categories();
-                        categories.id = category.id;
-                        categories.taxrate = category.taxrate;
-                        clsBOCloverStoreSettings.categories.Add(categories);
+                        categories.id = item.id;
+                        //cat.name = item.name;
+                        //cat.selected = item.selected;
+                        categories.taxrate = item.taxrate;
+                        cloverposserttings.categories.Add(categories);
                     }
                 }
-                JsonSerializer val = new JsonSerializer();
-                string text = JsonConvert.SerializeObject((object)clsBOCloverStoreSettings);
-                return GenerateCSVFiles(StoreId.ToString(), clsBOCloverStoreSettings);
+                JsonSerializer serializer = new JsonSerializer();
+                string cloversettings = JsonConvert.SerializeObject(cloverposserttings);
+                return GenerateCSVFiles(StoreId.ToString(), cloverposserttings);
             }
             return "";
         }
 
         public string getCategories(string merchant_id, string accessToken, int StoreId)
         {
-            Thread.Sleep(1000);
+            //Thread.Sleep(1000);
             #region Old Approch , Changes AccessToken Passed Along with Url
             //var client = new RestClient(baseUrl + "/v3/merchants/" + merchant_id + "/categories?limit=100&access_token=" + accessToken);
             //var request = new RestRequest(Method.GET);
@@ -331,46 +202,46 @@ namespace CloverPos
             //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             #endregion New changes are accesstocken passed in header
             Thread.Sleep(1000);
-            RestClient val = new RestClient(baseUrl + "/v3/merchants/" + merchant_id + "/categories?limit=100");
-            RestRequest val2 = new RestRequest((Method)0);
-            val2.AddHeader("cache-control", "no-cache");
-            val2.AddHeader("content-type", "application/x-www-form-urlencoded");
-            val2.AddHeader("Authorization", "Bearer " + accessToken);
+            RestClient client = new RestClient(baseUrl + "/v3/merchants/" + merchant_id + "/categories?limit=100");
+            RestRequest request = new RestRequest(Method.GET);
+            request.AddHeader("cache-control", "no-cache");
+            request.AddHeader("content-type", "application/x-www-form-urlencoded");
+            request.AddHeader("Authorization", "Bearer " + accessToken);
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-            IRestResponse val3 = val.Execute((IRestRequest)(object)val2);
+            IRestResponse response = client.Execute(request);
             try
             {
-                if (!(val3.StatusCode.ToString().ToUpper() == "UNAUTHORIZED"))
+                if (!(response.StatusCode.ToString().ToUpper() == "UNAUTHORIZED"))
                 {
-                    string content = val3.Content;
+                    string content = response.Content;
                     content = content.Substring(content.IndexOf('['));
                     return content.Substring(0, content.IndexOf(']') + 1);
                 }
                 Exception ex = new Exception();
                 new clsEmail().sendEmail(DeveloperId, "", "", "Error in " + StoreId + " CloverPos@" + DateTime.UtcNow.ToString() + " GMT", "StatusCode:Unauthorized Response while Getting Category<br/>" + ex.StackTrace);
             }
-            catch (Exception ex2)
+            catch (Exception ex)
             {
-                Console.WriteLine(ex2.Message);
+                Console.WriteLine(ex.Message);
                 return "";
             }
             return "";
         }
-        public string gettocken(string clientid, string code)
+        public string gettoken(string clientid, string code)
         {
             string text = ConfigurationManager.AppSettings["CloverAPPSecrete"];
-            string text2 = baseUrl + "/oauth/token";
-            RestClient val = new RestClient(text2);
-            RestRequest val2 = new RestRequest((Method)1);
-            val2.AddHeader("cache-control", "no-cache");
-            val2.AddHeader("content-type", "application/x-www-form-urlencoded");
-            val2.AddHeader("authorization", "Bearer <access_token>");
-            val2.AddHeader("TokenExpiry", "100");
-            string text3 = "client_id=" + clientid + "&client_secret=" + text + "&code=" + code;
-            val2.AddParameter("application/x-www-form-urlencoded", (object)text3, (ParameterType)4);
+            string url = baseUrl + "/oauth/token";
+            RestClient client = new RestClient(url);
+            RestRequest request = new RestRequest(Method.POST);
+            request.AddHeader("cache-control", "no-cache");
+            request.AddHeader("content-type", "application/x-www-form-urlencoded");
+            request.AddHeader("authorization", "Bearer <access_token>");
+            request.AddHeader("TokenExpiry", "100");
+            string json = "client_id=" + clientid + "&client_secret=" + text + "&code=" + code;
+            request.AddParameter("application/x-www-form-urlencoded", json, (ParameterType)4);
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-            IRestResponse val3 = val.Execute((IRestRequest)(object)val2);
-            dynamic val4 = JsonConvert.DeserializeObject(val3.Content);
+            IRestResponse response = client.Execute(request);
+            dynamic val4 = JsonConvert.DeserializeObject(response.Content);
             //File.AppendAllText("11264.json", val4);
             return val4["access_token"].Value;
 
@@ -458,59 +329,58 @@ namespace CloverPos
             {
                 string merchantid = settings.merchantid;
                 string tokenid = settings.tokenid;
-                decimal num = default(decimal);
-                RestClient val = new RestClient(baseUrl + "/v3/merchants/" + merchantid + "/tax_rates?limit=100");
-                RestRequest val2 = new RestRequest((Method)0);
-                val2.AddHeader("cache-control", "no-cache");
-                val2.AddHeader("content-type", "application/x-www-form-urlencoded");
-                val2.AddHeader("Authorization", "Bearer " + tokenid);
+                decimal defTaxNum = default(decimal);
+                RestClient client = new RestClient(baseUrl + "/v3/merchants/" + merchantid + "/tax_rates?limit=100");
+                RestRequest request = new RestRequest(Method.GET);
+                request.AddHeader("cache-control", "no-cache");
+                request.AddHeader("content-type", "application/x-www-form-urlencoded");
+                request.AddHeader("Authorization", "Bearer " + tokenid);
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-                IRestResponse val3 = val.Execute((IRestRequest)(object)val2);
-                //File.AppendAllText("12820.json", val3.Content);
-                string content = val3.Content;
+                IRestResponse response = client.Execute(request);
+                //File.AppendAllText($"{storeid_tax_rates}.json", response.Content);
+                string content = response.Content;
                 Tax tax = Load<Tax>(content);
-                int num2 = (from t in tax.elements
+                int ElementTaxValue = (from t in tax.elements
                             where t.isDefault = true
                             select t.rate).FirstOrDefault();
-                if (num2 != 0)
+                if (ElementTaxValue != 0)
                 {
-                    num = (decimal)num2 / Convert.ToDecimal(100000);
-                    num /= 100m;
+                    defTaxNum = (decimal)ElementTaxValue / Convert.ToDecimal(100000);
+                    defTaxNum /= 100m;
                 }
-                List<ExportProducts> list = new List<ExportProducts>();
+                List<ExportProducts> Productlist = new List<ExportProducts>();
 
                 //new include for fullname file
                 List<FullNameProductModel> fullNameList = new List<FullNameProductModel>();
 
                 parentItems parentItems = new parentItems();
-                int num3 = 0;
-                decimal num4 = default(decimal);
-                string text = string.Join(",", settings.categories.Select((categories x) => x.id));
-                num3 = 0;
+                int offset = 0;
+                decimal TaxValue = default(decimal);
+                string allCategories = string.Join(",", settings.categories.Select((categories x) => x.id));
                 for (int i = 0; i <= 100000; i++)
                 {
                     try
                     {
                         if (i != 0)
                         {
-                            num3 = 1000;
-                            num3 = num3 * i + 1;
+                            offset = 1000;
+                            offset = offset * i + 1;
                         }
                         else
                         {
-                            num3 = 0;
+                            offset = 0;
                         }
-                        string text2 = storeid.ToString();
-                        RestClient val4 = new RestClient(baseUrl + "/v3/merchants/" + merchantid + "/items?expand=itemStock,taxRates,categories&offset=" + num3 + "&limit=1000");
-                        RestRequest val5 = new RestRequest((Method)0);
-                        val5.AddHeader("cache-control", "no-cache");
-                        val5.AddHeader("Authorization", "Bearer " + tokenid);
-                        val5.AddHeader("content-type", "application/x-www-form-urlencoded");
+                        string StoreId = storeid.ToString();
+                        RestClient client1 = new RestClient(baseUrl + "/v3/merchants/" + merchantid + "/items?expand=itemStock,taxRates,categories&offset=" + offset + "&limit=1000");
+                        RestRequest request1 = new RestRequest(Method.GET);
+                        request1.AddHeader("cache-control", "no-cache");
+                        request1.AddHeader("Authorization", "Bearer " + tokenid);
+                        request1.AddHeader("content-type", "application/x-www-form-urlencoded");
                         ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-                        IRestResponse val6 = val4.Execute((IRestRequest)(object)val5);
-                        string content2 = val6.Content;
-                       // File.AppendAllText("12821.json", content2);
-                        if (val6.StatusCode.ToString().ToUpper() != "OK")
+                        IRestResponse response1 = client1.Execute(request1);
+                        string content2 = response1.Content;
+                        // File.AppendAllText($"{storeid_items}.json", content2);
+                        if (response1.StatusCode.ToString().ToUpper() != "OK")
                         {
                             if (!exception.Contains(storeid.ToString()))
                             {
@@ -542,17 +412,17 @@ namespace CloverPos
                             {
                                 continue;
                             }
-                            num4 = default(decimal);
-                            bool flag2 = true;
+                            TaxValue = default(decimal);
+                            bool NodefaultTax = true;
                             if (element.defaultTaxRates != null && element.defaultTaxRates.ToUpper() == "TRUE")
                             {
-                                flag2 = false;
-                                num4 = num;
+                                NodefaultTax = false;
+                                TaxValue = defTaxNum;
                             }
-                            if (flag2 && element.taxRates != null && element.taxRates.elements.Count > 0 && element.taxRates.elements[0].rate != 0)
+                            if (NodefaultTax && element.taxRates != null && element.taxRates.elements.Count > 0 && element.taxRates.elements[0].rate != 0)
                             {
-                                num4 = (decimal)element.taxRates.elements[0].rate / Convert.ToDecimal(100000);
-                                num4 /= 100m;
+                                TaxValue = (decimal)element.taxRates.elements[0].rate / Convert.ToDecimal(100000);
+                                TaxValue /= 100m;
                             }
                             if (settings.instock.ToUpper() == "TRUE" && element.itemStock != null && (element.itemStock.stockCount == 0 || element.itemStock.stockCount <= 0))
                             {
@@ -560,7 +430,7 @@ namespace CloverPos
                             }
                             ExportProducts exportProducts = new ExportProducts();
                             //new include
-                            FullNameProductModel fn = fn = new FullNameProductModel();
+                            FullNameProductModel fn = new FullNameProductModel();
 
                             exportProducts.storeid = storeid;
                             exportProducts.StoreProductName = "";
@@ -639,7 +509,7 @@ namespace CloverPos
                             {
                                 continue;
                             }
-                            exportProducts.tax = num4;
+                            exportProducts.tax = TaxValue;
                             exportProducts.upc = "";
                             if (element.code != null)
                             {
@@ -742,69 +612,68 @@ namespace CloverPos
                             exportProducts.Storedescription.Trim();
                             if (Deposit.Contains(storeid.ToString()))
                             {
-                                string input2 = exportProducts.StoreProductName.ToString();
+                                string ProdName = exportProducts.StoreProductName.ToString();
                                 Regex regex2 = new Regex("\\b(\\d+(?:\\.\\d+)?\\s?(?:pk|oz|ml|l|L|Pack|Oz|OZ|can|Can))\\b", RegexOptions.IgnoreCase);
-                                string text3 = regex2.Match(input2).ToString().ToUpper();
-                                if (text3.Contains("OZ") || text3.Contains("ML"))
+                                string matchedObject = regex2.Match(ProdName).ToString().ToUpper();
+                                if (matchedObject.Contains("OZ") || matchedObject.Contains("ML"))
                                 {
                                     exportProducts.deposit = Convert.ToDecimal(0.06);
                                 }
-                                else if (text3.Contains("PK") || text3.Contains("PACK"))
+                                else if (matchedObject.Contains("PK") || matchedObject.Contains("PACK"))
                                 {
-                                    Match match2 = Regex.Match(text3, "\\d+(\\.\\d+)?");
-                                    exportProducts.deposit = (decimal)Convert.ToInt32(match2.Value) * Convert.ToDecimal(0.06);
+                                    Match matchFound = Regex.Match(matchedObject, "\\d+(\\.\\d+)?");
+                                    exportProducts.deposit = Convert.ToInt32(matchFound.Value) * Convert.ToDecimal(0.06);
                                 }
                             }
                             if (UOMbaseddeposit.Contains(storeid.ToString()))
                             {
-                                string input3 = exportProducts.StoreProductName.ToString();
-                                Regex regex3 = new Regex("(\\.\\d+\\s+Oz|\\d+\\s+LB|\\d+\\s+Lb|\\d+.\\d+\\s+LB|\\d+\\s+LE|\\d+\\s+Le|\\d+\\s+Lo|\\d+\\s+Lu|\\d+\\s+Li|\\d+\\s+ml|\\d+ml|\\d+.\\d+L|\\dL|\\d+Oz|\\d+.\\d+Oz|\\d+\\s+Oz|\\d+.\\d+\\s+Oz|\\d+\\s+Oz.|\\d+\\s+L|\\d+.\\d+\\s+L|\\d+\\s+Ml|\\d+Ml)");
-                                Match match3 = regex3.Match(input3);
-                                if (match3.Success)
+                                string prodName = exportProducts.StoreProductName.ToString();
+                                Regex regexPattern = new Regex("(\\.\\d+\\s+Oz|\\d+\\s+LB|\\d+\\s+Lb|\\d+.\\d+\\s+LB|\\d+\\s+LE|\\d+\\s+Le|\\d+\\s+Lo|\\d+\\s+Lu|\\d+\\s+Li|\\d+\\s+ml|\\d+ml|\\d+.\\d+L|\\dL|\\d+Oz|\\d+.\\d+Oz|\\d+\\s+Oz|\\d+.\\d+\\s+Oz|\\d+\\s+Oz.|\\d+\\s+L|\\d+.\\d+\\s+L|\\d+\\s+Ml|\\d+Ml)");
+                                Match matchPattern = regexPattern.Match(prodName);
+                                if (matchPattern.Success)
                                 {
-                                    string input4 = match3.ToString();
-                                    Regex regex4 = new Regex("(\\d+\\s+LB|\\d+.\\d+\\s+LB|\\d+\\s+LE|\\d+\\s+Le|\\d+\\s+Lo|\\d+\\s+Lu|\\d+\\s+Li|\\d+\\s+Lb)");
-                                    Match match4 = regex4.Match(input4);
-                                    if (match4.Success)
+                                    string ResultView = matchPattern.ToString();
+                                    Regex regexPattern2 = new Regex("(\\d+\\s+LB|\\d+.\\d+\\s+LB|\\d+\\s+LE|\\d+\\s+Le|\\d+\\s+Lo|\\d+\\s+Lu|\\d+\\s+Li|\\d+\\s+Lb)");
+                                    Match matchPattern2 = regexPattern2.Match(ResultView);
+                                    if (matchPattern2.Success)
                                     {
                                         exportProducts.uom = " ";
                                     }
                                     else
                                     {
-                                        exportProducts.uom = match3.Value;
+                                        exportProducts.uom = matchPattern.Value;
                                     }
                                 }
                                 else
                                 {
                                     exportProducts.uom = " ";
                                 }
-                                string input5 = exportProducts.uom.ToString().ToUpper();
-                                Regex regex5 = new Regex("(\\.\\d+\\s+Oz|\\d+Oz|\\d+.\\d+Oz|\\d+\\s+Oz|\\d+.\\d+\\s+Oz|\\d+\\s+Oz.)");
-                                Match match5 = regex5.Match(input5);
-                                if (match5.Success)
+                                string prodUom = exportProducts.uom.ToString().ToUpper();
+                                Regex regexPattern3 = new Regex("(\\.\\d+\\s+Oz|\\d+Oz|\\d+.\\d+Oz|\\d+\\s+Oz|\\d+.\\d+\\s+Oz|\\d+\\s+Oz.)");
+                                Match matchPattern3 = regexPattern3.Match(prodUom);
+                                if (matchPattern3.Success)
                                 {
-                                    string value = match5.Value;
-                                    string value2 = Regex.Replace(value, "[^\\d+.\\d]", "");
+                                    string FoundValue = matchPattern3.Value;
+                                    string value2 = Regex.Replace(FoundValue, "[^\\d+.\\d]", "");
                                     double num5 = 29.5735;
                                     decimal num6 = (decimal)num5;
                                     exportProducts.uom = Convert.ToString(Convert.ToDecimal(value2) * num6);
                                 }
                                 else
                                 {
-                                    string input6 = exportProducts.uom.ToString().ToUpper();
-                                    Regex regex6 = new Regex("(\\d+.\\d+L|\\dL|\\d+\\s+L|\\d+.\\d+\\s+L)");
-                                    Match match6 = regex6.Match(input6);
-                                    if (match6.Success)
+                                    Regex regexPattern4 = new Regex("(\\d+.\\d+L|\\dL|\\d+\\s+L|\\d+.\\d+\\s+L)");
+                                    Match matchPattern4 = regexPattern4.Match(prodUom);
+                                    if (matchPattern4.Success)
                                     {
-                                        string value3 = match6.Value;
+                                        string value3 = matchPattern4.Value;
                                         string value4 = Regex.Replace(value3, "[^\\d+.\\d]", "");
                                         double num7 = 1000.0;
                                         decimal num8 = (decimal)num7;
                                         exportProducts.uom = Convert.ToString(Convert.ToDecimal(value4) * num8);
                                     }
                                 }
-                                string input7 = exportProducts.uom.ToString().ToUpper();
-                                string value5 = Regex.Replace(input7, "[^\\d+.\\d]", "");
+                                string prodUom2 = exportProducts.uom.ToString().ToUpper();
+                                string value5 = Regex.Replace(prodUom2, "[^\\d+.\\d]", "");
                                 if (exportProducts.uom != " " && exportProducts.uom != null)
                                 {
                                     decimal num9 = Convert.ToDecimal(value5);
@@ -817,8 +686,8 @@ namespace CloverPos
                                         exportProducts.deposit = Convert.ToDecimal(0.1);
                                     }
                                 }
-                                string input8 = exportProducts.pack.ToString().ToUpper();
-                                string value6 = Regex.Replace(input8, "[^\\d+.\\d]", "");
+                                string prodPack = exportProducts.pack.ToString().ToUpper();
+                                string value6 = Regex.Replace(prodPack, "[^\\d+.\\d]", "");
                                 if (exportProducts.pack != "1" && exportProducts.uom != " " && exportProducts.uom != null)
                                 {
                                     decimal num10 = Convert.ToDecimal(value5);
@@ -835,9 +704,9 @@ namespace CloverPos
                                         exportProducts.deposit = Convert.ToDecimal(value6) * num14;
                                     }
                                 }
-                                string input9 = exportProducts.StoreProductName.ToString();
+                                string prodName2 = exportProducts.StoreProductName.ToString();
                                 Regex regex7 = new Regex("(\\.\\d+\\s+Oz|\\d+\\s+ml|\\d+ml|\\d+.\\d+L|\\dL|\\d+Oz|\\d+.\\d+Oz|\\d+\\s+Oz|\\d+.\\d+\\s+Oz|\\d+\\s+Oz.|\\d+\\s+L|\\d+.\\d+\\s+L|\\d+\\s+Ml|\\d+Ml)");
-                                Match match7 = regex3.Match(input9);
+                                Match match7 = regexPattern.Match(prodName2);
                                 if (match7.Success)
                                 {
                                     string input10 = match7.ToString();
@@ -894,12 +763,12 @@ namespace CloverPos
 
                             if ((upcnotnullstores.Contains(storeid.ToString()) || upcskucodeidnull.Contains(storeid.ToString())) && exportProducts.upc != "")
                             {
-                                list.Add(exportProducts);
+                                Productlist.Add(exportProducts);
                                 fullNameList.Add(fn);
                             }
                             else if (exportProducts.CategoryId != "AKGXX4R4H9YP2" && element.code != null && element.code != "" && exportProducts.sku != "YWBMNBHY8J63E" && exportProducts.sku != "BSX0WDE4S26GR")
                             {
-                                list.Add(exportProducts);
+                                Productlist.Add(exportProducts);
                                 fullNameList.Add(fn);
                             }
                         }
@@ -914,7 +783,7 @@ namespace CloverPos
                 }
                 if (qtymerging.Contains(storeid.ToString()))
                 {
-                    var source = from a in list
+                    var source = from a in Productlist
                                  group a by a.upc into values
                                  select new
                                  {
@@ -930,7 +799,7 @@ namespace CloverPos
                         qty = d.qty
                     });
                     List<Duplicateslist> inner = source3.ToList();
-                    List<ExportProductss> source4 = (from a in list
+                    List<ExportProductss> source4 = (from a in Productlist
                                                      join b in inner on a.upc equals b.upc
                                                      select new ExportProductss
                                                      {
@@ -961,29 +830,29 @@ namespace CloverPos
                     CreateCSVFromGenericList(source4, text4, storeid);
                     return text4;
                 }
-                List<ExportProducts> list3 = new List<ExportProducts>();
-                List<FullNameProductModel> fnlist = new List<FullNameProductModel>();
+                List<ExportProducts> FinalProdList = new List<ExportProducts>();
+                List<FullNameProductModel> FinalFullNamelist = new List<FullNameProductModel>();
 
                 if (ExcludeToGo.Contains(storeid))
                 {
-                    list3.AddRange(list);
+                    FinalProdList.AddRange(Productlist);
                 }
                 else
                 {
                     foreach (categories categoryItemid in settings.categories)
                     {
-                        List<ExportProducts> collection = list.Where((ExportProducts x) => x.CategoryId.Contains(categoryItemid.id)).ToList();
-                        list3.AddRange(collection);
+                        List<ExportProducts> collection = Productlist.Where((ExportProducts x) => x.CategoryId.Contains(categoryItemid.id)).ToList();
+                        FinalProdList.AddRange(collection);
                         List<FullNameProductModel> collectionfn = fullNameList.Where((FullNameProductModel x) => x.CategoryId.Contains(categoryItemid.id)).ToList();
-                        fnlist.AddRange(collectionfn);
+                        FinalFullNamelist.AddRange(collectionfn);
                     }
                 }
                 
                 
                 string text5 = ConfigurationManager.AppSettings["BaseDirectory"] + "\\" + storeid + "\\Upload\\PRODUCT" + storeid + DateTime.UtcNow.ToString("yyyymmddHHmmss") + ".csv";
-                CreateCSVFromGenericList(list3, text5, storeid);
+                CreateCSVFromGenericList(FinalProdList, text5, storeid);
                 string text6 = ConfigurationManager.AppSettings["BaseDirectory"] + "\\" + storeid + "\\Upload\\FULLNAME" + storeid + DateTime.UtcNow.ToString("yyyymmddHHmmss") + ".csv";
-                CreateCSVFromGenericList(fnlist, text6, storeid);
+                CreateCSVFromGenericList(FinalFullNamelist, text6, storeid);
                 
                 return text5;
             }
