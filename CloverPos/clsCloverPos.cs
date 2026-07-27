@@ -209,7 +209,7 @@ namespace CloverPos
             request.AddHeader("Authorization", "Bearer " + accessToken);
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             IRestResponse response = client.Execute(request);
-    //  File.AppendAllText($"{StoreId}categories.json", response.Content); //comment later
+     File.AppendAllText($"{StoreId}categories.json", response.Content); //comment later
             try
             {
                 if (!(response.StatusCode.ToString().ToUpper() == "UNAUTHORIZED"))
@@ -339,7 +339,7 @@ namespace CloverPos
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 IRestResponse response = client.Execute(request);
 
-             //  File.AppendAllText($"{storeid}tax_rates.json", response.Content); //comment later
+               File.AppendAllText($"{storeid}tax_rates.json", response.Content); //comment later
 
 
                 string content = response.Content;
@@ -384,7 +384,7 @@ namespace CloverPos
                         IRestResponse response1 = client1.Execute(request1);
                         string content2 = response1.Content;
                 
-             //   File.AppendAllText($"{storeid}_items.json", content2); //comment later 
+                File.AppendAllText($"{storeid}_items.json", content2); //comment later 
                         if (response1.StatusCode.ToString().ToUpper() != "OK")
                         {
                             if (!exception.Contains(storeid.ToString()))
@@ -411,7 +411,6 @@ namespace CloverPos
                                 element.id = ((element.code == null) ? element.code : element.id.ToString().Replace("\n", ""));
                             element.code = ((element.code == null) ? element.code : element.code.ToString().Replace("\n", ""));
                            /* if (!string.IsNullOrEmpty(element.code) && element.code.Equals("811194039574"))
-
                             {
                                 Console.WriteLine(element.code);
                             }
@@ -472,13 +471,23 @@ namespace CloverPos
                             {
                                 exportProducts.Storedescription = element.alternateName;
                             }
+                            Console.WriteLine("Before_element.id != null_");
+                            Console.WriteLine($"ID: '{element.id}____{exportProducts.sku}'");
+                            Console.WriteLine($"SKU: '{element.sku}'");
+                            Console.WriteLine($"CODE: '{element.code}'");
+
                             exportProducts.sku = "";
                             if (element.id != null)
                             {
                                 exportProducts.sku = element.id;
                             }
-                           
-                                exportProducts.pack = "1";
+
+                            Console.WriteLine("After_element.id != null_");
+                            Console.WriteLine($"ID: '{element.id}____{exportProducts.sku} '");
+                            Console.WriteLine($"SKU: '{element.sku}'");
+                            Console.WriteLine($"CODE: '{element.code}'");
+
+                            exportProducts.pack = "1";
                             if (UOMbaseddeposit.Contains(storeid.ToString()))
                             {
                                 string input = exportProducts.StoreProductName.ToString().ToUpper();
