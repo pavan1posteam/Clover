@@ -1,5 +1,6 @@
 ﻿
 using CloverPos.Models;
+using iTextSharp.text.pdf.qrcode;
 using Newtonsoft.Json;
 using RestSharp;
 using System;
@@ -22,8 +23,12 @@ namespace CloverPos
         string constr = ConfigurationManager.AppSettings.Get("LiquorAppsConnectionString");
         string baseUrl = ConfigurationManager.AppSettings["CloverBaseURL"];
         string DeveloperId = ConfigurationManager.AppSettings["DeveloperId"];
+
+        //commented in implementation
         string upcasskuandcode = ConfigurationManager.AppSettings.Get("upc_sku_code");
+
         string upcassku = ConfigurationManager.AppSettings.Get("upc_sku");
+
         string upcasskuandappend = ConfigurationManager.AppSettings.Get("upc_sku_append");
         string upcnotnullstores = ConfigurationManager.AppSettings.Get("upc_not_null");
         string exception = ConfigurationManager.AppSettings.Get("exception_store");
@@ -35,7 +40,7 @@ namespace CloverPos
         string Staticqty100 = ConfigurationManager.AppSettings.Get("Staticqty100");
         string EnabledOnline = ConfigurationManager.AppSettings.Get("EnabledOnline");
         string NegativeToPositive = ConfigurationManager.AppSettings.Get("NegativeToPositive");
-        string upcskucodeidnull= ConfigurationManager.AppSettings.Get("upcskucodeid");
+        string upcskucodeidnull = ConfigurationManager.AppSettings.Get("upcskucodeid");
 
 
         StoreSetting ss = new StoreSetting();
@@ -45,7 +50,7 @@ namespace CloverPos
         {
             Console.WriteLine("Generating Product File of Clover " + StoreId);
             string[] array = Clover_RefreshToken(ClientId, refreshtoken, StoreId, 0, 0);
-            string value = CloverSettings(StoreId, MerchantId, ClientId, array[0], Code, InStock, Category, array[1]??"");
+            string value = CloverSettings(StoreId, MerchantId, ClientId, array[0], Code, InStock, Category, array[1] ?? "");
             if (!string.IsNullOrEmpty(value))
             {
                 Console.WriteLine("Product File Generated for Clover " + StoreId);
@@ -190,7 +195,7 @@ namespace CloverPos
             }
             return "";
         }
-        
+
         public string getCategories(string merchant_id, string accessToken, int StoreId)
         {
             //Thread.Sleep(1000);
@@ -209,7 +214,7 @@ namespace CloverPos
             request.AddHeader("Authorization", "Bearer " + accessToken);
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             IRestResponse response = client.Execute(request);
-     File.AppendAllText($"{StoreId}categories.json", response.Content); //comment later
+           // File.AppendAllText($"{StoreId}categories.json", response.Content); //comment later
             try
             {
                 if (!(response.StatusCode.ToString().ToUpper() == "UNAUTHORIZED"))
@@ -339,14 +344,14 @@ namespace CloverPos
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 IRestResponse response = client.Execute(request);
 
-               File.AppendAllText($"{storeid}tax_rates.json", response.Content); //comment later
+              //  File.AppendAllText($"{storeid}tax_rates.json", response.Content); //comment later
 
 
                 string content = response.Content;
                 Tax tax = Load<Tax>(content);
                 int ElementTaxValue = (from t in tax.elements
-                            where t.isDefault = true
-                            select t.rate).FirstOrDefault();
+                                       where t.isDefault = true
+                                       select t.rate).FirstOrDefault();
                 if (ElementTaxValue != 0)
                 {
                     defTaxNum = (decimal)ElementTaxValue / Convert.ToDecimal(100000);
@@ -383,8 +388,8 @@ namespace CloverPos
                         ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                         IRestResponse response1 = client1.Execute(request1);
                         string content2 = response1.Content;
-                
-                File.AppendAllText($"{storeid}_items.json", content2); //comment later 
+
+                    //    File.AppendAllText($"{storeid}_items.json", content2); //comment later 
                         if (response1.StatusCode.ToString().ToUpper() != "OK")
                         {
                             if (!exception.Contains(storeid.ToString()))
@@ -407,14 +412,15 @@ namespace CloverPos
                         }
                         foreach (Products element in parentItems2.elements)
                         {
-                            
-                                element.id = ((element.code == null) ? element.code : element.id.ToString().Replace("\n", ""));
+
+                            element.id = ((element.code == null) ? element.code : element.id.ToString().Replace("\n", ""));
                             element.code = ((element.code == null) ? element.code : element.code.ToString().Replace("\n", ""));
-                           /* if (!string.IsNullOrEmpty(element.code) && element.code.Equals("811194039574"))
-                            {
-                                Console.WriteLine(element.code);
-                            }
-                            else { continue; }*/
+                            /* if (!string.IsNullOrEmpty(element.code) && element.code.Equals("811194039574"))
+
+                             {
+                                 Console.WriteLine(element.code);
+                             }
+                             else { continue; }*/
                             if (Staticqty100.Contains(storeid.ToString()) && !element.available && element.hidden)
                             {
                                 continue;
@@ -461,6 +467,8 @@ namespace CloverPos
                                     exportProducts.StoreProductName = element.name;
                                 }
                             }
+
+
                             if (!string.IsNullOrEmpty(exportProducts.StoreProductName))
                             {
                                 exportProducts.StoreProductName =
@@ -471,10 +479,7 @@ namespace CloverPos
                             {
                                 exportProducts.Storedescription = element.alternateName;
                             }
-                            Console.WriteLine("Before_element.id != null_");
-                            Console.WriteLine($"ID: '{element.id}____{exportProducts.sku}'");
-                            Console.WriteLine($"SKU: '{element.sku}'");
-                            Console.WriteLine($"CODE: '{element.code}'");
+
 
                             exportProducts.sku = "";
                             if (element.id != null)
@@ -482,12 +487,8 @@ namespace CloverPos
                                 exportProducts.sku = element.id;
                             }
 
-                            Console.WriteLine("After_element.id != null_");
-                            Console.WriteLine($"ID: '{element.id}____{exportProducts.sku} '");
-                            Console.WriteLine($"SKU: '{element.sku}'");
-                            Console.WriteLine($"CODE: '{element.code}'");
-
                             exportProducts.pack = "1";
+
                             if (UOMbaseddeposit.Contains(storeid.ToString()))
                             {
                                 string input = exportProducts.StoreProductName.ToString().ToUpper();
@@ -538,82 +539,119 @@ namespace CloverPos
                             }
                             exportProducts.tax = TaxValue;
                             exportProducts.upc = "";
-                            if (element.code != null)
+                            /* if (element.code != null)
+                             {
+                                 exportProducts.upc = "#" + element.code.ToString();
+                             }*/
+
+
+                            // Added as per Anand instructions Considering only proper numeric value as UPC. & eliminating alphanumeric value  
+                            // First preference: Code
+                            if (!string.IsNullOrEmpty(element.code) && Regex.IsMatch(element.code, @"^\d+$"))
                             {
-                                exportProducts.upc = "#" + element.code.ToString();
-                            }
-                            
-                                if (upcskucodeidnull.Contains(storeid.ToString()))
+                                exportProducts.upc = "#" + element.code;
+                                if (!string.IsNullOrEmpty(element.sku))
                                 {
-                                    exportProducts.upc = "";
-                                    exportProducts.sku = "";
-                                    element.code = ((element.code == null) ? "" : element.code);
-                                    element.sku = ((element.sku == null) ? "" : element.sku);
-                                    exportProducts.upc = "#" + element.code.ToString();
-                                    exportProducts.sku = "#" + element.sku;
+                                    exportProducts.altupc1 = element.sku;
+                                }
+                            }
+                            // Second preference: SKU
+                            else if (!string.IsNullOrEmpty(element.sku) && Regex.IsMatch(element.sku, @"^\d+$"))
+                            {
+                                exportProducts.upc = "#" + element.sku;
+                                if (!string.IsNullOrEmpty(element.code))
+                                {
+                                    exportProducts.altupc1 = element.code;
+                                }
+                            }
+                            // Neither is valid
+                            else
+                            {
+                                continue;
+                            }
+
+                            // it looking something different 
+                            if (upcskucodeidnull.Contains(storeid.ToString()))
+                            {
+                                //  exportProducts.upc = "";
+                                //  exportProducts.sku = "";
+
+                                element.code = ((element.code == null) ? "" : element.code);
+                                element.sku = ((element.sku == null) ? "" : element.sku);
+
+                                // exportProducts.upc = "#" + element.code.ToString();
+                                // exportProducts.sku = "#" + element.sku;
+                                //if (exportProducts.upc.Length <= 1)
+                                //{
+                                //    if (exportProducts.sku.Length <= 1)
+                                //    {
+                                //        exportProducts.upc = "#" + element.id;
+                                //        exportProducts.sku = "#" + element.id;
+                                //    }
+                                //    else
+                                //    {
+                                //        exportProducts.upc = exportProducts.sku;
+                                //    }
+                                //}
+
+                                if (exportProducts.sku.Length <= 1)
+                                {
                                     if (exportProducts.upc.Length <= 1)
                                     {
-                                        if (exportProducts.sku.Length <= 1)
-                                        {
-                                            exportProducts.upc = "#" + element.id;
-                                            exportProducts.sku = "#" + element.id;
-                                        }
-                                        else
-                                        {
-                                            exportProducts.upc = exportProducts.sku;
-                                        }
+                                        exportProducts.upc = "#" + element.id;
+                                        exportProducts.sku = "#" + element.id;
                                     }
-                                    if (exportProducts.sku.Length <= 1)
+                                    else
                                     {
-                                        if (exportProducts.upc.Length <= 1)
-                                        {
-                                            exportProducts.upc = "#" + element.id;
-                                            exportProducts.sku = "#" + element.id;
-                                        }
-                                        else
-                                        {
-                                            exportProducts.sku = exportProducts.upc;
-                                        }
+                                        exportProducts.sku = exportProducts.upc;
                                     }
-                                }
-                           
-                            if (upcasskuandcode.Contains(storeid.ToString()))
-                            {
-                                element.code = ((element.code == null) ? "" : element.code);
-                                element.sku = ((element.sku == null) ? "" : element.sku);
-                                exportProducts.upc = "";
-                                if (element.sku != "")
-                                {
-                                    exportProducts.upc = "#" + element.sku.ToString();
-                                }
-                                else if (element.code != "")
-                                {
-                                    exportProducts.upc = "#" + element.code.ToString();
-                                }
-                                else
-                                {
-                                    exportProducts.upc = "";
                                 }
                             }
-                            
+
+
+                            // Not required ,By default New changes will satisify this criteria 
+
+                            //if (upcasskuandcode.Contains(storeid.ToString()))
+                            //{
+                            //    element.code = ((element.code == null) ? "" : element.code);
+                            //    element.sku = ((element.sku == null) ? "" : element.sku);
+                            //    exportProducts.upc = "";
+                            //    if (element.sku != "")
+                            //    {
+                            //        exportProducts.upc = "#" + element.sku.ToString();
+                            //    }
+                            //    else if (element.code != "")
+                            //    {
+                            //        exportProducts.upc = "#" + element.code.ToString();
+                            //    }
+                            //    else
+                            //    {
+                            //        exportProducts.upc = "";
+                            //    }
+                            //}
+
+                            // Not required for upc bcz valid upc as per new conditions and sku is considering from code here  
                             if (upcassku.Contains(storeid.ToString()))
                             {
-                                element.code = ((element.code == null) ? "" : element.code);
-                                element.sku = ((element.sku == null) ? "" : element.sku);
-                                exportProducts.upc = "";
-                                if (element.sku != "")
-                                {
-                                    exportProducts.upc = "#" + element.sku.ToString();
-                                }
-                                else if (element.sku == "")
-                                {
-                                    exportProducts.upc = "";
-                                }
+
+                                //    element.code = ((element.code == null) ? "" : element.code);
+                                //    element.sku = ((element.sku == null) ? "" : element.sku);
+                                //      //exportProducts.upc = "";
+                                //    if (element.sku != "")
+                                //    {
+                                //        exportProducts.upc = "#" + element.sku.ToString();
+                                //    }
+                                //    else if (element.sku == "")
+                                //    {
+                                //        exportProducts.upc = "";
+                                //    }
                                 if (element.code != "")
                                 {
                                     exportProducts.sku = "#" + element.code.ToString();
                                 }
                             }
+
+                            //custom logic donot touch it 
                             if (upcasskuandappend.Contains(storeid.ToString()))
                             {
                                 string id = element.id;
@@ -626,18 +664,27 @@ namespace CloverPos
                                 }
                                 else
                                 {
-                                    exportProducts.upc = "#99" +storeid+ id;
+                                    exportProducts.upc = "#99" + storeid + id;
                                 }
                             }
+
                             if (exportProducts.storeid == "12120" && element.code != null)
                             {
                                 exportProducts.upc = "#" + Regex.Replace(element.code.ToString().Replace(".", ""), "E.*", "");
                             }
-                            exportProducts.altupc1 = element.altupc1;
-                            exportProducts.altupc2 = element.altupc2;
-                            exportProducts.altupc3 = element.altupc3;
-                            exportProducts.altupc4 = element.altupc4;
-                            exportProducts.altupc5 = element.altupc5;
+
+                            exportProducts.altupc2 = element.altupc1;
+                            exportProducts.altupc3 = element.altupc2;
+                            exportProducts.altupc4 = element.altupc3;
+                            exportProducts.altupc5 = element.altupc4;
+
+                            // exportProducts.altupc1 = element.altupc1;
+
+                            /* exportProducts.altupc2 = element.altupc2;
+                               exportProducts.altupc3 = element.altupc3;
+                               exportProducts.altupc4 = element.altupc4;
+                               exportProducts.altupc5 = element.altupc5;  */
+
                             exportProducts.StoreProductName.Trim();
                             exportProducts.Storedescription.Trim();
                             if (Deposit.Contains(storeid.ToString()))
@@ -756,6 +803,7 @@ namespace CloverPos
                                     exportProducts.uom = " ";
                                 }
                             }
+
                             exportProducts.CategoryId = ((element.categories.elements.Count > 0) ? string.Join(",", element.categories.elements.Select((Categoryelements x) => x.id)) : "Other");
                             //new include for fullname file
                             fn.pname = exportProducts.StoreProductName;
@@ -784,23 +832,35 @@ namespace CloverPos
                                 int derivedPack = getpack(exportProducts.StoreProductName);
                                 fn.pack = derivedPack;                         // override fullname pack
                                 exportProducts.pack = derivedPack.ToString();  // override export pack
-                                
+
                             }
 
                             fn.country = "";
                             fn.region = "";
-                            
+
+                            //Debugging-1
+                            /*  if (element.sku == "850079194038" || element.sku == "850018947992" || element.sku == "850079194014")
+                             {
+                                 Console.WriteLine(
+                                     $"Adding: SKU={element.sku}, UPC={exportProducts.upc}, Category={exportProducts.CategoryId}");
+                             }*/
 
                             if ((upcnotnullstores.Contains(storeid.ToString()) || upcskucodeidnull.Contains(storeid.ToString())) && exportProducts.upc != "")
                             {
                                 Productlist.Add(exportProducts);
                                 fullNameList.Add(fn);
                             }
-                            else if (exportProducts.CategoryId != "AKGXX4R4H9YP2" && element.code != null && element.code != "" && exportProducts.sku != "YWBMNBHY8J63E" && exportProducts.sku != "BSX0WDE4S26GR")
+                            /* else if (exportProducts.CategoryId != "AKGXX4R4H9YP2" && element.code != null && element.code != "" && exportProducts.sku != "YWBMNBHY8J63E" && exportProducts.sku != "BSX0WDE4S26GR")
+                             {
+                                 Productlist.Add(exportProducts);
+                                 fullNameList.Add(fn);
+                             }*/
+                            else if (exportProducts.CategoryId != "AKGXX4R4H9YP2" && exportProducts.sku != "YWBMNBHY8J63E" && exportProducts.sku != "BSX0WDE4S26GR")
                             {
                                 Productlist.Add(exportProducts);
                                 fullNameList.Add(fn);
                             }
+
                         }
                     }
                     catch (Exception ex2)
@@ -811,6 +871,19 @@ namespace CloverPos
                         }
                     }
                 }
+
+                //Debugging-2
+                /* Console.WriteLine("------ PRODUCT LIST ------");
+
+                 foreach (var p in Productlist.Where(x =>
+                     x.upc == "#850018947992" ||
+                     x.upc == "#850079194014" ||
+                     x.upc == "#850079194038"))
+                 {
+                     Console.WriteLine($"PRODUCTLIST ->upc = {p.upc} SKU={p.sku}, Category={p.CategoryId}");
+                 }*/
+
+
                 if (qtymerging.Contains(storeid.ToString()))
                 {
                     var source = from a in Productlist
@@ -873,18 +946,32 @@ namespace CloverPos
                     {
                         List<ExportProducts> collection = Productlist.Where((ExportProducts x) => x.CategoryId.Contains(categoryItemid.id)).ToList();
                         FinalProdList.AddRange(collection);
+
                         List<FullNameProductModel> collectionfn = fullNameList.Where((FullNameProductModel x) => x.CategoryId.Contains(categoryItemid.id)).ToList();
                         FinalFullNamelist.AddRange(collectionfn);
                     }
                 }
-                
-                
+
+
+                //Debugging-3
+                /*Console.WriteLine("--------------- FINAL LIST ---------------");
+
+                 foreach (var p in FinalProdList.Where(x =>
+                      x.upc == "#850018947992" ||
+                      x.upc == "#850079194014" ||
+                      x.upc == "#850079194038"))
+                  {
+                      Console.WriteLine($"PRODUCTLIST ->upc = {p.upc} SKU={p.sku}, Category={p.CategoryId}");
+                  }
+  */
+
                 string text5 = ConfigurationManager.AppSettings["BaseDirectory"] + "\\" + storeid + "\\Upload\\PRODUCT" + storeid + DateTime.UtcNow.ToString("yyyymmddHHmmss") + ".csv";
                 CreateCSVFromGenericList(FinalProdList, text5, storeid);
                 string text6 = ConfigurationManager.AppSettings["BaseDirectory"] + "\\" + storeid + "\\Upload\\FULLNAME" + storeid + DateTime.UtcNow.ToString("yyyymmddHHmmss") + ".csv";
                 CreateCSVFromGenericList(FinalFullNamelist, text6, storeid);
                 sendTokenToSyncgo(settings.clientid, RefreshToken, storeid);
                 return text5;
+
             }
             catch (Exception ex3)
             {
@@ -895,7 +982,7 @@ namespace CloverPos
         private void sendTokenToSyncgo(string clientid, string refresh_token, string StoreId)
         {
             string[] array = Clover_RefreshToken(clientid, refresh_token, Convert.ToInt32(StoreId), 0, 0);
-            if(array == null || array.Length == 0) { return; }
+            if (array == null || array.Length == 0) { return; }
             else
             {
                 try
@@ -914,7 +1001,7 @@ namespace CloverPos
                     IRestResponse response = client.Execute(request);
                     string content = response.Content;
                 }
-                catch(Exception)
+                catch (Exception)
                 {
 
                 }
@@ -926,13 +1013,13 @@ namespace CloverPos
             {
                 return;
             }
-            if (!Directory.Exists(ConfigurationManager.AppSettings["BaseDirectory"] +"\\" + storeid + "\\Upload\\"))
+            if (!Directory.Exists(ConfigurationManager.AppSettings["BaseDirectory"] + "\\" + storeid + "\\Upload\\"))
             {
                 Directory.CreateDirectory(ConfigurationManager.AppSettings["BaseDirectory"] + "\\" + storeid + "\\Upload\\");
             }
             Type type = list[0].GetType();
             string newLine = Environment.NewLine;
-            using(StreamWriter streamWriter = new StreamWriter(csvNameWithExt))
+            using (StreamWriter streamWriter = new StreamWriter(csvNameWithExt))
             {
                 object obj = Activator.CreateInstance(type);
                 PropertyInfo[] properties = obj.GetType().GetProperties();
