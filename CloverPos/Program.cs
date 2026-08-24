@@ -18,14 +18,15 @@ namespace CloverPos
                 {
                     try
                     {
-                        //if (current.StoreSettings.StoreId == 13298 || current.StoreSettings.StoreId == 13299 || current.StoreSettings.StoreId == 13300 || current.StoreSettings.StoreId ==  13301 )
-                        //{
-                        //    Console.WriteLine("Fetching_storeid " + current.StoreSettings.StoreId);
-                        //}
-                        //else
-                        //{
-                        //    continue;
-                        //}
+
+                    //    if (current.StoreSettings.StoreId == 13331)
+                    //    {
+                    //        Console.WriteLine("Fetching_storeid " + current.StoreSettings.StoreId);
+                    //    }
+                    //    else
+                    //    {
+                    //        continue;
+                    //    }
 
                         if (current.StoreSettings.POSSettings != null && current.StoreSettings.POSSettings.categories != null)
                         {
